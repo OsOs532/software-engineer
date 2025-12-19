@@ -84,7 +84,7 @@ You can host this project using:
 
 ## 👨‍💻 Team Members
 This project is developed by:
-- **Osama**
+- **Mohamed Osama**
 - **Emam Mohamed**
 - **Abdelruhman Eltokhy**
 - **Hanin Gamal**
