@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Ordering </title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <audio id="click-sound"src="audio/success.mp3"preload="auto"></audio>
+    <audio id="sound-burger"src="audio/success.mp3"preload="auto"></audio>
+    <audio id="sound-pizza"src="audio/success.mp3"preload="auto"></audio>
+    <audio id="sound-pasta"src="audio/success.mp3"preload="auto"></audio>
+    <audio id="sound-salad"src="audio/success.mp3"preload="auto"></audio> 
+    <audio id="sound-view-cart-btn"src="audio/success.mp3"preload="auto"></audio> 
+
+
+</head>
+<body>
+    <video autoplay muted loop class="video-background">
+        <source src="video/background.mp4" type="video/mp4">
+    </video>
+    <div class="container">
+        <div id="login-page">
+            <h1>Login to Order</h1>
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button onclick="login()">Login</button>
+            
+            <a href="#" class="form-link" onclick="showRegisterPage()">Need an account? Register</a>
+            <a href="#" class="form-link" onclick="showForgotPasswordPage()">Forgot password?</a>
+        </div>
+
+        <div id="register-page" class="hidden">
+            <h1>Register Account</h1>
+            <input type="text" id="reg-username" placeholder="Username" required>
+            <input type="email" id="reg-email" placeholder="Email" required>
+            <input type="password" id="reg-password" placeholder="Password" required>
+            <input type="password" id="reg-confirm-password" placeholder="Confirm Password" required>
+            <button onclick="register()">Register</button>
+            <a href="#" class="form-link" onclick="showLoginPage()">Back to Login</a>
+        </div>
+
+        <div id="forgot-password-page" class="hidden">
+            <h1>Forgot Password</h1>
+            <p>Enter your email address and we will send you a link to reset your password.</p>
+            <input type="email" id="forgot-email" placeholder="Your Email" required>
+            <button onclick="resetPassword()">Submit</button>
+            <a href="#" class="form-link" onclick="showLoginPage()">Back to Login</a>
+        </div>
+
+
+        <div id="menu-page" class="hidden">
+            <h1>Food Menu</h1>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Burger">
+                <span>Burger - $5</span>
+                <input type="number" id="burgerQty" min="1" value="1" onchange="updatePrice('Burger', 5)">
+                <button onclick="addToCart('Burger', 5, 1)">Add to Cart</button>
+            </div>
+            <div class="menu-item">
+                <img src="images/pizza.jpg" alt="Pizza">
+                <span>Pizza - $8</span>
+                <input type="number" id="pizzaQty" min="1" value="1" onchange="updatePrice('Pizza', 8)">
+                <button onclick="addToCart('Pizza', 8, 2)">Add to Cart</button>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1608897013039-887f21d8c804?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Pasta">
+                <span>Pasta - $6</span>
+                <input type="number" id="pastaQty" min="1" value="1" onchange="updatePrice('Pasta', 6)">
+                <button onclick="addToCart('Pasta', 6, 3)">Add to Cart</button>
+            </div>
+            <div class="menu-item">
+                <img src="images\salad.jpg"alt="Salad">
+                <span>Salad - $4</span>
+                <input type="number" id="saladQty" min="1" value="1" onchange="updatePrice('Salad', 4)">
+                <button onclick="addToCart('Salad', 4, 4)">Add to Cart</button>
+            </div>
+            <button class="view-cart-btn" onclick="showCart()">View Cart</button>
+        </div>
+
+        <div id="cart-page" class="hidden">
+            <h2>Shopping Cart</h2>
+            <ul id="cart-items"></ul>
+            <div id="total-price">Total: $0</div>
+            <button onclick="checkout()">Checkout</button>
+            <button onclick="emptyCart()">Cancel Order</button>
+            <button onclick="backToMenu()">Back to Menu</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>This site for food order it designed by Mohamed Osama </p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Site Map</h3>
+                <ul>
+                    <li><a href="https://www.mcdonalds.eg/" target="_blank">Categories</a></li>
+                    <li><a href="https://www.mcdonalds.eg/eat/menu/page/full-menu" target="_blank">Foods</a></li>
+                    <li><a href="https://www.mcdelivery.eg/eg/" target="_blank">Order</a></li>
+                    <li><a href="https://wa.me/qr/UCZ7VUJT6BD7C1"target="_blank">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Social Links</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=100033771226713&locale=ar_AR" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/o_s_o_s_202/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/mohamed-osama-7b3091326/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.youtube.com/@el-hacker013" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>All rights reserved. Designed by <a href="#">Os Os</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+<script>
+    //  هالكود بيقرأ user_id من PHP SESSION ويخزنها في localStorage
+    fetch("inc/get_user_id.php")
+        .then(response => response.json())
+        .then(data => {
+            if (data.user_id) {
+                console.log("User logged in:", data.user_id);
+                localStorage.setItem("user_id", data.user_id);
+            } else {
+                console.log("User NOT logged in");
+            }
+        })
+        .catch(err => console.error("Error reading session:", err));
+</script>
+
+</body>
+</html>
