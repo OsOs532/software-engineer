@@ -1,0 +1,291 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+.video-background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+.container {
+    max-width: 1150px;
+    width: 90%;
+    margin: 20px auto;
+    position: relative;
+    z-index: 1;
+    flex: 1;
+}
+h1, h2 {
+    text-align: center;
+    color: #F1F1F1;
+    margin-bottom: 45px;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+/* MODIFIED: Added #register-page and #forgot-password-page */
+#login-page, #menu-page, #cart-page, #register-page, #forgot-password-page {
+    background: rgba(50, 50, 50, 0.7);
+    padding: 60px;
+    border-radius: 100px;
+    box-shadow: 0 8px 20px rgb(63, 65, 63);
+    margin-bottom: 30px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* MODIFIED: Added new page inputs */
+#login-page input, #register-page input, #forgot-password-page input {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+/* MODIFIED: Added new page input focus */
+#login-page input:focus, #register-page input:focus, #forgot-password-page input:focus {
+    border-color: #ff6f61;
+    transform: scale(1.02);
+    outline: none;
+}
+
+/* MODIFIED: Added new page buttons */
+#login-page button, .menu-item button, #cart-page button, #register-page button, #forgot-password-page button {
+    background: linear-gradient(45deg, #ff6f61, #ff8e53);
+    color: #FFF8E1;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.2s ease, background 0.3s ease;
+    margin: 5px; /* Added margin for spacing */
+}
+/* MODIFIED: Added new page button hovers */
+#login-page button:hover, .menu-item button:hover, #cart-page button:hover, #register-page button:hover, #forgot-password-page button:hover {
+    background: linear-gradient(45deg, #ff8e53, #ff6f61);
+    transform: translateY(-3px);
+}
+
+/* Styles for the remove button */
+.remove-btn {
+    background: linear-gradient(45deg, #e74c3c, #c0392b); /* Red gradient */
+    padding: 5px 10px;
+    font-size: 14px;
+    transform: none; /* Override hover transform */
+}
+.remove-btn:hover {
+    background: linear-gradient(45deg, #c0392b, #e74c3c); /* Darker red */
+    transform: translateY(-1px); /* Smaller hover effect */
+}
+
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    margin: 10px 0;
+    background: #f9f9f96b;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: slideIn 0.5s ease-in-out;
+}
+.menu-item:hover {
+    transform: translateX(10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+.menu-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 15px;
+}
+.menu-item span {
+    flex: 1;
+    font-size: 18px;
+    color: #34495e;
+}
+.menu-item input {
+    width: 60px;
+    padding: 8px;
+    margin-right: 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 16px;
+}
+#cart-items {
+    list-style: none;
+    padding: 0;
+}
+#cart-items li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Align items vertically */
+    padding: 15px;
+    margin: 10px 0;
+    background: #f9f9f9;
+    border-radius: 10px;
+    animation: slideIn 0.5s ease-in-out;
+}
+#total-price {
+    font-weight: bold;
+    font-size: 1.5em;
+    text-align: right;
+    margin-top: 20px;
+    color: #ff6f61;
+}
+.hidden {
+    display: none;
+}
+/* View Cart Button Styling */
+.view-cart-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 15px 30px;
+    background: linear-gradient(45deg, #ff4d4d, #ff8c1a); /* تدرج ألوان جذاب */
+    color: #F1F1F1;
+    font-size: 18px;
+    font-weight: bold;
+    border: 3px solid #ffd700; /* حدود ذهبية مزخرفة */
+    border-radius: 25px; /* زوايا دائرية */
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(255, 77, 77, 0.7); /* تأثير توهج */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* ظل للنص */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+.view-cart-btn:hover {
+    background: linear-gradient(45deg, #ff8c1a, #ff4d4d); /* عكس التدرج عند التمرير */
+    transform: scale(1.1); /* تكبير الزر */
+    box-shadow: 0 0 25px rgba(255, 77, 77, 1); /* توهج أقوى */
+}
+.view-cart-btn:active {
+    transform: scale(0.95); /* تصغير الزر عند الضغط */
+}
+
+/* NEW: Style for the links in the forms */
+.form-link {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: #f1f1f1;
+    text-decoration: none;
+    font-size: 14px;
+}
+.form-link:hover {
+    color: #ff6f61;
+    text-decoration: underline;
+}
+
+/* NEW: Style for paragraph text in forgot password */
+#forgot-password-page p {
+    color: #f1f1f1;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Footer Styles */
+footer {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 1px 5px;
+    position: relative;
+    z-index: 1;
+    margin-top: 10px;
+}
+.footer-content {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.footer-section {
+    flex: 1;
+    min-width: 100px;
+}
+.footer-section h3 {
+    color: white;
+    margin-bottom: 7px;
+    font-size: 14px;
+}
+.footer-section p {
+    color: #ccc;
+    font-size: 12px;
+    line-height: 1.3;
+}
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+.footer-section ul li {
+    margin-bottom: 5px;
+}
+.footer-section ul li a {
+    color: #ff6f61;
+    text-decoration: none;
+    font-size: 12px;
+}
+.footer-section ul li a:hover {
+    color: #ff8e53;
+}
+.social-icons {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+.social-icons a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.social-icons a:hover {
+    color: #ff6f61;
+}
+.footer-bottom {
+    text-align: center;
+    padding-top: 5px;
+    border-top: 1px solid rgba(255, 255, 250, 0.1);
+    margin-top: 5px;
+    font-size: 12px;
+    color: #ccc;
+}
+.footer-bottom a {
+    color: #ff6f61;
+    text-decoration: none;
+}
+.footer-bottom a:hover {
+    color: #ff8e53;
+}
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+.cart-animation {
+    animation: bounce 0.5s ease;
+}
+@keyframes bounce {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
