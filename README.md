@@ -1,118 +1,100 @@
-☠️ Food Ordering System ☠️
+# 🍔 Food Ordering System
 
-A complete web-based food ordering system built with PHP and MySQL.
-Manages online food orders with a clean, structured architecture.
+A complete web-based food ordering system built with **PHP** and **MySQL**.
+Designed to manage online food orders with a clean, structured architecture.
 
-✨ Features
+---
 
-🍽️ Browse active food menu items
+## 📌 Project Overview
+- 🍽️ **Active Menu:** Browse available food items dynamically.
+- 🛒 **Smart Cart:** Dynamic shopping cart with quantity control.
+- 💰 **Auto-Calculation:** Real-time total price calculation.
+- 🔐 **Auth System:** Secure user registration and login.
+- 📦 **Order Tracking:** Checkout process and status tracking.
+- 🛠️ **Admin Dashboard:** Full control over menu and orders.
+- 📊 **Reports:** Order status management and reporting.
+- 📱 **Responsive:** Fully responsive user interface for all devices.
+- 🔒 **Security:** Secure password handling & data protection.
 
-🛒 Dynamic shopping cart with quantity control
+---
 
-💰 Automatic total price calculation
-
-🔐 User registration and login system
-
-📦 Order checkout and tracking
-
-🛠️ Admin dashboard for full control
-
-📊 Order status management and reports
-
-📱 Responsive user interface
-
-🔒 Secure password handling
-
-📁 Project Structure
+## 📂 Project Structure
 software-engineer/
-│
-├── api/        # Backend API logic
-├── inc/        # Configuration and database connection
-├── ui/         # User interfaces
-├── styles/     # CSS files
-├── images/     # Project images and screenshots
-├── audio/      # Audio files
-├── video/      # Video files
-└── README.md
+│── api/         # Backend API logic
+│── inc/         # Configuration & Database connection
+│── ui/          # User Interfaces (Views)
+│── styles/      # CSS Stylesheets
+│── images/      # Project assets & screenshots
+│── audio/       # Audio files
+│── video/       # Video files
+│── README.md    # Project Documentation
 
-🚀 How to Run
+---
 
-Install XAMPP or WAMP
+## 🧠 System Architecture
+Built using a **Three-Tier Architecture** to ensure scalability and maintainability:
+1. **Presentation Layer** (UI/UX)
+2. **Application Layer** (Logic/PHP)
+3. **Data Layer** (MySQL Database)
 
-Copy the project folder into htdocs
+---
 
-Start Apache and MySQL
+## 🚀 How to Run
+1. Install **XAMPP** or **WAMP** server.
+2. Copy the project folder `software-engineer` into `htdocs`.
+3. Start **Apache** and **MySQL** from the control panel.
+4. Import the database file (if provided) via phpMyAdmin.
+5. Open your browser and visit:
+   `http://localhost/software-engineer`
 
-Open your browser
+---
 
-Visit http://localhost/software-engineer
+## 🧰 Technologies Used
+- 🧱 **HTML5**
+- 🎨 **CSS3**
+- ⚡ **JavaScript**
+- 🧠 **PHP 8+**
+- 🗄️ **MySQL 5.7+**
 
-🧠 System Architecture
+---
 
-Presentation Layer
+## 🔒 Security Measures
+- ✅ **Password Hashing** (Secure storage).
+- ✅ **SQL Injection Protection** (Prepared statements).
+- ✅ **XSS Protection** (Input sanitization).
+- ✅ **Secure Session Management**.
 
-Application Layer
+---
 
-Data Layer
+## 🌍 Deployment
+You can host this project using:
+- **Localhost** (XAMPP/WAMP/MAMP).
+- **Shared Hosting** (Must support PHP & MySQL).
+- **GitHub** (For code versioning).
 
-Built using a three-tier architecture for scalability and maintainability.
+---
 
-🧰 Technologies Used
+## 🛠️ Requirements
+- PHP **8.0** or higher.
+- MySQL **5.7** or higher.
+- A modern web browser.
+- Internet connection (for initial setup/CDN assets).
 
-HTML5
+---
 
-CSS3
+## 👨‍💻 Team Members
+This project is developed by:
+- **Osama**
+- **Emam Mohamed**
+- **Abdelruhman Eltokhy**
+- **Hanin Gamal**
+- **Tasneem Khalid**
+- **Nada Ziad**
 
-JavaScript
+---
 
-PHP 8+
+## 📜 License
+> **Educational use only.**
+> All rights reserved © **Osama**
 
-MySQL 5.7+
-
-🔒 Security
-
-Password hashing
-
-Protection against SQL Injection
-
-Protection against XSS attacks
-
-Secure session management
-
-🌍 Deployment
-
-GitHub
-
-Localhost
-
-Shared hosting with PHP and MySQL support
-
-📋 Requirements
-
-PHP 8+
-
-MySQL 5.7+
-
-Modern web browser
-
-Internet connection
-
-👨‍💻 Team Members
-
-Osama
-
-Emam Mohamed
-
-Abdelruhman Eltokhy
-
-Hanin Gamal
-
-Tasneem Khalid
-
-Nada Ziad
-
-📜 License
-
-Educational use only
-
-All rights reserved © Osama
+---
